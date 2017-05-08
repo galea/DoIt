@@ -39,7 +39,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="kaO-zl-pbi"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JHo-dx-8LT">
                             <connections>
-                                <action selector="plusTapped:" destination="BYZ-38-t0r" id="uLP-vL-UFp"/>
+                                <action selector="plusTapped:" destination="BYZ-38-t0r" id="Qzu-02-RG0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -111,7 +111,6 @@
                     </view>
                     <connections>
                         <outlet property="importantSwitch" destination="95R-jA-RlC" id="CV2-pv-99w"/>
-                        <outlet property="taskNameLabel" destination="tUF-lP-hNN" id="hbQ-4k-T3Q"/>
                         <outlet property="taskNameTextField" destination="4sa-GW-kHj" id="ONf-fY-kHR"/>
                     </connections>
                 </viewController>
