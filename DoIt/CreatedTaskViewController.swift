@@ -12,17 +12,17 @@ class CreatedTaskViewController: UIViewController {
     
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var importantSwitch: UISwitch!
-
+    
     //connection to get to previcus viewcontroller
     var previousVC = TasksViewController()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func addTapped(_ sender: Any) {
         
         //create a task from the textfield
@@ -35,8 +35,8 @@ class CreatedTaskViewController: UIViewController {
         previousVC.tasks.append(task)
         previousVC.tableView.reloadData()
         navigationController!.popViewController(animated: true)
- 
- }
- 
-  
+        
+    }
+    
+    
 }
