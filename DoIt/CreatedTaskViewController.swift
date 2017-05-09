@@ -13,9 +13,6 @@ class CreatedTaskViewController: UIViewController {
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var importantSwitch: UISwitch!
     
-    //connection to get to previcus viewcontroller
-    var previousVC = TasksViewController()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +22,19 @@ class CreatedTaskViewController: UIViewController {
     
     @IBAction func addTapped(_ sender: Any) {
         
+        //getting accec to appdelagate
+       let context =  (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
         //create a task from the textfield
-        let task = Task()
-        task.name = taskNameTextField.text!
+        let task = Task(context: context)
+        
+        task.name = taskNameTextField.text
         task.important = importantSwitch.isOn
+        //saves to coredata savecontext function
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
-        //add new task to array in tableviewController
+        //Pop back after adding item
         
-        previousVC.tasks.append(task)
-        previousVC.tableView.reloadData()
         navigationController!.popViewController(animated: true)
         
     }
